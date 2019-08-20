@@ -1,14 +1,14 @@
-const _data = null;
-const next = null;
-const previous = null;
+let _data = null;
+let next = null;
+let previous = null;
 
 module.exports = {
     /*
      * Node Contructor
      * @param null $data
      */
-    __contructor: function (data) {
-        _data = data;
+    __contructor: function (node) {
+        _data = node;
     },
 
     /*

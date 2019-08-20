@@ -4,7 +4,8 @@ exports.show = (req, res) => {
     return res.status(200).json('show');
 }
 exports.prepend = (req, res) => {
-    const data = req.query.input;
+    const data = req.body.input;
+    
     __contructor(data);
     
     return res.status(200).json(`prepend done`);
