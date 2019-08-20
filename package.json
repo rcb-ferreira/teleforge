@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/rcb-ferreira/teleforge/issues"
   },
-  "homepage": "https://github.com/rcb-ferreira/teleforge#readme"
+  "homepage": "https://github.com/rcb-ferreira/teleforge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
 }
