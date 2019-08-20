@@ -18,7 +18,7 @@ app.get('/api', (req, res) => {
 });
 
 // API version 1 routes
-app.use('/api', dequeRouter);
+app.use('/api/deqeue', dequeRouter);
 
 app.listen(properties.PORT, () => {
     console.log(`Server is running on ${properties.PORT} port.`);

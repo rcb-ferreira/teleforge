@@ -2,7 +2,8 @@ exports.show = (req, res) => {
     return res.status(200).json('show');
 }
 exports.prepend = (req, res) => {
-    return res.status(200).json('prepend');
+    const data = JSON.stringify(req.query.input);
+    return res.status(200).json(`prepend ${data}`);
 }
 exports.pop = (req, res) => {
     return res.status(200).json('pop');
