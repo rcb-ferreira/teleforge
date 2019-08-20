@@ -1,6 +1,7 @@
 const express = require('express'),
     cors = require('cors'),
-    properties = require('./config/properties')
+    properties = require('./config/properties'),
+    dequeRouter = require('./routes/deque');
 
 const app = express();
 
@@ -12,13 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 // Enable CORS for testing, not production
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     return res.send('Welcom to teleforge app');
 });
+
 // API version 1 routes
-// app.use('/api/v1', indexRouter);
-// app.use('/api/v1/users', usersRouter);
-// app.use('/api/v1/posts', postsRouter);
+app.use('/api', dequeRouter);
 
 app.listen(properties.PORT, () => {
     console.log(`Server is running on ${properties.PORT} port.`);
