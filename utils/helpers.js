@@ -7,8 +7,8 @@ module.exports = {
      * Node Contructor
      * @param null $data
      */
-    __contructor: function (node) {
-        _data = node;
+    __contructor: function (data) {
+       _data = data;
     },
 
     /*
@@ -50,7 +50,7 @@ module.exports = {
     * @return null | Node
     */
     removeItem: function (item) {
-        let currNode = this.find(item);
+        let currNode = find(item);
         if (!(currNode.next == null)) {
             currNode.previous.next = currNode.next;
             currNode.next.previous = currNode.previous;
@@ -73,6 +73,28 @@ module.exports = {
         }
 
         return currNode;
-    }
+    },
+
+    /*
+    * @return null | Node
+    */
+    find(item) {
+        let currNode = this.head;
+        while (currNode.element != item) {
+            currNode = currNode.next;
+        }
+        return currNode;
+    },
+
+    /*
+    * add null | Node
+    */
+    insert(newElement, item) {
+        let newNode = new Node(newElement);
+        let current = this.find(item);
+        newNode.next = current.next;
+        newNode.previous = current;
+        current.next = newNode;
+    } 
 
 }
