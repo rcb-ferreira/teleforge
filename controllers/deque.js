@@ -1,8 +1,12 @@
+const { __contructor } = require('../utils/helpers');
+
 exports.show = (req, res) => {
     return res.status(200).json('show');
 }
 exports.prepend = (req, res) => {
     const data = JSON.stringify(req.query.input);
+    __contructor(data);
+    
     return res.status(200).json(`prepend ${data}`);
 }
 exports.pop = (req, res) => {
