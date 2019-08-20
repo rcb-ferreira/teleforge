@@ -4,10 +4,10 @@ exports.show = (req, res) => {
     return res.status(200).json('show');
 }
 exports.prepend = (req, res) => {
-    const data = JSON.stringify(req.query.input);
+    const data = req.query.input;
     __contructor(data);
     
-    return res.status(200).json(`prepend ${data}`);
+    return res.status(200).json(`prepend done`);
 }
 exports.pop = (req, res) => {
     return res.status(200).json('pop');
