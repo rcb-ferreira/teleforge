@@ -1,7 +1,7 @@
 const express = require('express'),
     cors = require('cors'),
     properties = require('./config/properties'),
-    dequeRouter = require('./routes/deque');
+    dequeRouter = require('./routes/deqeue');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.get('/api', (req, res) => {
 });
 
 // API version 1 routes
-app.use('/api/deqeue', dequeRouter);
+app.use('/api/dequeue', dequeRouter);
 
 app.listen(properties.PORT, () => {
     console.log(`Server is running on ${properties.PORT} port.`);
