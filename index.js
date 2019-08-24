@@ -14,13 +14,13 @@ app.use(express.urlencoded({ extended: false }));
 // Enable CORS for testing, not production
 app.use(cors());
 
-// app.get('/api', (req, res) => {
-//     return res.send('Welcom to teleforge app');
-// });
-
-app.get('/', function (req, res) {
-    return res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/api', (req, res) => {
+    return res.send('Welcom to teleforge app');
 });
+
+// app.get('/', function (req, res) {
+//     return res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 // API version 1 routes
 app.use('/api/dequeue', dequeRouter);
